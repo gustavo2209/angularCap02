@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DirectivaComponent } from './comp/directiva/directiva.component';
 import { EvaluaSwitchComponent } from './comp/evalua-switch/evalua-switch.component';
+import { InterpolacionComponent } from './comp/interpolacion/interpolacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectivaComponent,
-    EvaluaSwitchComponent
+    EvaluaSwitchComponent,
+    InterpolacionComponent
   ],
   imports: [
     BrowserModule,
