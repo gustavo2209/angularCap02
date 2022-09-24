@@ -532,7 +532,36 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
+  
+  <hr/>
+
+  <p class="lead fs-3">Muestra Empleados Calificacion Mayor 7</p>
+
+  <div class="row">
+    <div class="col col-6" *ngFor="let emp of empCalificaM7">
+      <div class="card bg-warning text-white shadow border border-2 m-2">
+        <div class="card-header">
+          {{emp.name}} Calificacion: {{emp.calificacion}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <p class="lead fs-3">Muestra Empleados Maxima Calificacion</p>
+
+  <div class="row">
+    <div class="col col-6" *ngFor="let emp of empCalifMaxima">
+      <div class="card bg-info text-white shadow border border-2 m-2">
+        <div class="card-header">
+          {{emp.name}} Calificacion: {{emp.calificacion}}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 
