@@ -1,0 +1,132 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col col-4 border border-2 border-primary m-2 p-2">
+          <p class="lead fs-2">Interpolacion</p>
+          <h3>Título del componente principal {{title}}</h3>
+          <h4>{{subtitulo}}</h4>
+          <p>Sumatoria: {{5+4}}</p>
+          <p class="lead fs-2">Precio: {{precio}}</p>
+  
+          <hr/>
+          <div>
+            <p [style.font-size]="'24px'" [style.margin]="'20px'" [style.color]="'red'">Directivas de Atributo (ngStyle ngClass)</p>
+            <p [ngStyle]="{'background-color':'green', 'color':'white', 'margin':'20px', 'padding':'20px', 'font-size':'30px'}">Directiva con ngStyle</p>
+  
+            <hr/>
+  
+            <p [ngClass]="'lead fs-2 text-primary fw-bolder'">Directiva ngClass (usando string)</p>
+            <p [ngClass]="['bg-primary', 'text-white', 'fs-4', 'p-2']">Directiva ngClass con arreglo</p>
+            <p [ngClass]="{'lead fs-2 text-white bg-dark':true}">Directiva ngClass con objeto</p>
+          </div>
+        </div>
+  
+        <div class="col col-6 border border-2 border-info m-2 p-2">
+          <p class="lead fs-2">Directivas Estructurales</p>
+          <button (click)="mostrarCurso()" class="btn btn-success btn-sm">{{textoBtnCurso}}</button>
+  
+          <div *ngIf="muestraCurso">
+            Java, Spring, Javascript, React, Angular
+          </div>
+  
+          <hr/>
+  
+          <div *ngIf="matriculaAbierta; else matriculaCerrada">
+            <p>La matricula aun se encuentra abierta</p>
+          </div>
+  
+          <ng-template #matriculaCerrada>
+            <p>La matricula se encuentra cerrada</p>
+          </ng-template>
+  
+          <div>
+            <p>ngSwitch (Caso Examen)</p>
+            <button class="btn btn-primary btn-sm me-2" (click)="continuarExamen()">Continuar con examenes</button>
+            <button class="btn btn-warning btn-sm" (click)="reiniciarExamen()">Reiniciar</button>
+            <div [ngSwitch]="examenCalificado">
+              <div *ngSwitchCase="1" class="alert alert-primary border border-3 m-2">
+                <p>Practica Calificada 1</p>
+              </div>
+              <div *ngSwitchCase="2" class="alert alert-danger border border-3 m-2">
+                <p>Examen Parcial</p>
+              </div>
+              <div *ngSwitchCase="3" class="alert alert-info border border-3 m-2">
+                <p>Examen Final</p>
+              </div>
+              <div *ngSwitchDefault class="alert alert-secondary border border-3 m-2">
+                <p>Se culminó con las evaluaciones</p>
+              </div>
+            </div>
+          </div>
+  
+          <hr/>
+  
+          <div>
+            <p>Otro ejemplo ngSwitch usando ngFor</p>
+            <button (click)="continuarEvaluaciones()" class="btn btn-info mb-3">Continua con las evaluaciones</button>
+            <div [ngSwitch]="evaluacion">
+              <div *ngFor="let evalua of evaluaciones">
+                <div *ngSwitchCase="evalua.id" class="alert alert-primary">
+                  <p>Curso {{evalua.nombre}}</p>
+                  <p>Preg1.- {{evalua.preg1}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+    <hr/>
+  
+    <div>
+      <p class="lead fs-2 fw-bolder">Directiva Estructural (*ngFor)</p>
+      <button (click)="mostrarEmpleados()" class="btn btn-info">Empleados</button>
+    </div>
+  
+    <div *ngIf="muestraEmpleados">
+      <div class="row">
+        <div class="col col-2" *ngFor="let empleado of empleados">
+          <div class="card m-2">
+            <div class="card-header bg-primary text-white">
+              Nombre: {{empleado.name}}
+            </div>
+            <div class="card-body">
+              Cargo: {{empleado.cargo}}
+            </div>
+            <div class="card-footer" [ngStyle]="{'background-color':evaluaCalificacion(empleado.calificacion)}">
+              Calificacion: {{empleado.calificacion}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr/>
+  
+    <p class="lead fs-3">Muestra Empleados Calificacion Mayor 7</p>
+  
+    <div class="row">
+      <div class="col col-6" *ngFor="let emp of empCalificaM7">
+        <div class="card bg-warning text-white shadow border border-2 m-2">
+          <div class="card-header">
+            {{emp.name}} Calificacion: {{emp.calificacion}}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <hr/>
+  
+    <p class="lead fs-3">Muestra Empleados Maxima Calificacion</p>
+  
+    <div class="row">
+      <div class="col col-6" *ngFor="let emp of empCalifMaxima">
+        <div class="card bg-info text-white shadow border border-2 m-2">
+          <div class="card-header">
+            {{emp.name}} Calificacion: {{emp.calificacion}}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
