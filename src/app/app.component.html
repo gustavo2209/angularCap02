@@ -494,6 +494,12 @@
         <div>
           <p [style.font-size]="'24px'" [style.margin]="'20px'" [style.color]="'red'">Directivas de Atributo (ngStyle ngClass)</p>
           <p [ngStyle]="{'background-color':'green', 'color':'white', 'margin':'20px', 'padding':'20px', 'font-size':'30px'}">Directiva con ngStyle</p>
+
+          <hr/>
+
+          <p [ngClass]="'lead fs-2 text-primary fw-bolder'">Directiva ngClass (usando string)</p>
+          <p [ngClass]="['bg-primary', 'text-white', 'fs-4', 'p-2']">Directiva ngClass con arreglo</p>
+          <p [ngClass]="{'lead fs-2 text-white bg-dark':true}">Directiva ngClass con objeto</p>
         </div>
       </div>
 
@@ -561,16 +567,16 @@
 
   <div *ngIf="muestraEmpleados">
     <div class="row">
-      <div class="col col-4" *ngFor="let empleado of empleados">
+      <div class="col col-2" *ngFor="let empleado of empleados">
         <div class="card m-2">
           <div class="card-header bg-primary text-white">
-            {{empleado.name}}
+            Nombre: {{empleado.name}}
           </div>
           <div class="card-body">
-            {{empleado.cargo}}
+            Cargo: {{empleado.cargo}}
           </div>
-          <div class="card-footer">
-            {{empleado.calificacion}}
+          <div class="card-footer" [ngStyle]="{'background-color':evaluaCalificacion(empleado.calificacion)}">
+            Calificacion: {{empleado.calificacion}}
           </div>
         </div>
       </div>

@@ -179,4 +179,13 @@ export class AppComponent {
       calificacion:9
     }
   ]
+
+  // DIRECTIVAS ATRIBUTOS
+
+  evaluaCalificacion(calificacion:any){
+    let color:string='';
+
+    color=calificacion>8?'gold':'red';
+    return color;
+  }
 }
