@@ -6,36 +6,15 @@
           <app-interpolacion></app-interpolacion>
   
           <hr/>
-          <div>
-            <p [style.font-size]="'24px'" [style.margin]="'20px'" [style.color]="'red'">Directivas de Atributo (ngStyle ngClass)</p>
-            <p [ngStyle]="{'background-color':'green', 'color':'white', 'margin':'20px', 'padding':'20px', 'font-size':'30px'}">Directiva con ngStyle</p>
-  
-            <hr/>
-  
-            <p [ngClass]="'lead fs-2 text-primary fw-bolder'">Directiva ngClass (usando string)</p>
-            <p [ngClass]="['bg-primary', 'text-white', 'fs-4', 'p-2']">Directiva ngClass con arreglo</p>
-            <p [ngClass]="{'lead fs-2 text-white bg-dark':true}">Directiva ngClass con objeto</p>
-          </div>
+
+          <app-evalua-direct-atrib></app-evalua-direct-atrib>
+
+          
         </div>
   
         <div class="col col-6 border border-2 border-info m-2 p-2">
-          <p class="lead fs-2">Directivas Estructurales</p>
-          <button (click)="mostrarCurso()" class="btn btn-success btn-sm">{{textoBtnCurso}}</button>
-  
-          <div *ngIf="muestraCurso">
-            Java, Spring, Javascript, React, Angular
-          </div>
-  
-          <hr/>
-  
-          <div *ngIf="matriculaAbierta; else matriculaCerrada">
-            <p>La matricula aun se encuentra abierta</p>
-          </div>
-  
-          <ng-template #matriculaCerrada>
-            <p>La matricula se encuentra cerrada</p>
-          </ng-template>
-  
+          <app-evalua-direct-estruct></app-evalua-direct-estruct>
+            
           <app-evalua-switch></app-evalua-switch>
 
         </div>

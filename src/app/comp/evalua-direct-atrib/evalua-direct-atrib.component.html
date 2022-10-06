@@ -1,0 +1,10 @@
+<div>
+    <p [style.font-size]="'24px'" [style.margin]="'20px'" [style.color]="'red'">Directivas de Atributo (ngStyle ngClass)</p>
+    <p [ngStyle]="{'background-color':'green', 'color':'white', 'margin':'20px', 'padding':'20px', 'font-size':'30px'}">Directiva con ngStyle</p>
+
+    <hr/>
+
+    <p [ngClass]="'lead fs-2 text-primary fw-bolder'">Directiva ngClass (usando string)</p>
+    <p [ngClass]="['bg-primary', 'text-white', 'fs-4', 'p-2']">Directiva ngClass con arreglo</p>
+    <p [ngClass]="{'lead fs-2 text-white bg-dark':true}">Directiva ngClass con objeto</p>
+  </div>

@@ -8,18 +8,6 @@ import { empleados } from '../data';
 })
 export class DirectivaComponent implements OnInit {
 
-  // directivas estructurales
-  muestraCurso:boolean=false;
-  textoBtnCurso:string="Mostrar cursos disponibles";
-
-  matriculaAbierta:boolean=false;
-
-  mostrarCurso(){
-    console.log("ud ha hecho click sobre el boton");
-    this.muestraCurso=!this.muestraCurso;
-    this.textoBtnCurso=this.muestraCurso?"Ocultar cursos":"Mostrar cursos disponibles";
-  }
-
   //ngFor
 
   muestraEmpleados:boolean=true;

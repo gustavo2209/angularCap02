@@ -1,0 +1,16 @@
+<p class="lead fs-2">Directivas Estructurales</p>
+<button (click)="mostrarCurso()" class="btn btn-success btn-sm">
+  {{ textoBtnCurso }}
+</button>
+
+<div *ngIf="muestraCurso">Java, Spring, Javascript, React, Angular</div>
+
+<hr />
+
+<div *ngIf="matriculaAbierta; else matriculaCerrada">
+  <p>La matricula aun se encuentra abierta</p>
+</div>
+
+<ng-template #matriculaCerrada>
+  <p>La matricula se encuentra cerrada</p>
+</ng-template>
