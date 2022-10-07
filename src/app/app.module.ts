@@ -9,6 +9,11 @@ import { InterpolacionComponent } from './comp/interpolacion/interpolacion.compo
 import { EvaluaDirectAtribComponent } from './comp/evalua-direct-atrib/evalua-direct-atrib.component';
 import { EvaluaDirectEstructComponent } from './comp/evalua-direct-estruct/evalua-direct-estruct.component';
 import { PipesComponent } from './comp/pipes/pipes.component';
+import { VistasPipe } from './pipes/vistas.pipe';
+import { NavegadorComponent } from './comp/navegador/navegador.component';
+import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.component';
+import { HomeComponent } from './comp/home/home.component';
+import { EmpleadosComponent } from './comp/empleados/empleados.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { PipesComponent } from './comp/pipes/pipes.component';
     InterpolacionComponent,
     EvaluaDirectAtribComponent,
     EvaluaDirectEstructComponent,
-    PipesComponent
+    PipesComponent,
+    VistasPipe,
+    NavegadorComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    EmpleadosComponent
   ],
   imports: [
     BrowserModule,

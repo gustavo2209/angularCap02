@@ -1,1 +1,76 @@
-<p>pipes works!</p>
+<div class="container">
+    <p class="lead fs-2">Revisión de Pipes</p>
+    <div class="alert alert-primary">
+        <p>Descripción sin el uso del Pipe: {{descripcion}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Descripción con el uso del Pipe (mayúscula): {{descripcion | uppercase}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Descripción con el uso del Pipe (minúscula): {{descripcion | lowercase}}</p>
+    </div>
+
+    <div class="alert alert-primary">
+        <p class="fs-4">Precio sin el uso del Pipe: {{precio}}</p>
+    </div>
+    <p class="fs-4">Uso del Pipe number</p>
+    <div class="alert alert-danger">
+        <p class="fs-4">Precio con el uso del Pipe (por defecto reduce la parte decimal a 3): {{precio | number}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Precio con el uso del Pipe (dos decimales): {{precio | number:'1.0-2'}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Precio con el uso del Pipe (cuatro decimales): {{precio | number:'1.0-4'}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Sueldo del futbolista con el uso del Pipe (number): {{sueldoFutbolista | number:'.0-0'}}</p>
+    </div>
+
+    <hr>
+
+    <div class="alert alert-primary">
+        <p class="fs-4">IGV sin el uso del Pipe: {{IGV}}</p>
+    </div>
+    <p class="fs-4">Uso del Pipe percent</p>
+    <div class="alert alert-danger">
+        <p class="fs-4">IGV con el uso del Pipe (percent): {{IGV | percent}}</p>
+    </div>
+
+    <hr>
+
+    <div class="alert alert-primary">
+        <p class="fs-4">Día sin el uso del Pipe: {{dia}}</p>
+    </div>
+    <p class="fs-4">Uso del Pipe date</p>
+    <div class="alert alert-danger">
+        <p class="fs-4">Dia con el uso del Pipe (date): {{dia | date}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Dia con el uso del Pipe (date usando short): {{dia | date:'short'}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Dia con el uso del Pipe (date usando shortDate): {{dia | date:'shortDate'}}</p>
+    </div>
+
+    <hr>
+
+    <div class="alert alert-primary">
+        <p class="fs-4">Saldo en cuenta de ahorro sin el uso del Pipe: {{saldoCuentaAhorro}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Saldo en cuenta de ahorro con el uso del Pipe (currency): {{saldoCuentaAhorro| currency}}</p>
+    </div>
+    <div class="alert alert-danger">
+        <p class="fs-4">Saldo en cuenta de ahorro con el uso del Pipe (currency euro): {{saldoCuentaAhorro| currency:'EUR'}}</p>
+    </div>
+
+    <hr>
+    <div class="alert alert-warning">
+        <p class="fs-4">Número de vistas sin pipe: {{nroVistas}}</p>
+    </div>
+    <p>Pipe creado para vistas</p>
+    <div class="alert alert-primary">
+        <p class="fs-4">Número de vistas con pipe: {{nroVistas | vistas}}</p>
+    </div>
+</div>
