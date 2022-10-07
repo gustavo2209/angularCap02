@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <p class="lead fs-2 text-info fw-bolder">Form Frutas Model Driven</p>
+        <div class="col col-5 m-2 p-2 shadow border border-3 border-info">
+            <pre>Fruta recepcionada: {{resultado | json}}</pre>
+            <hr>
+
+            <div class="row">
+                <div class="col col-6" *ngFor="let fruta of frutas">
+                    <div class="card m-2">
+                        <div class="card-header bg-primary text-white border border-3 shadow">
+                            Nombre: {{fruta.nombre}}
+                        </div>
+                        <div class="card-body">
+                            Precio S/. {{fruta.precio}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-5 m-2 p-2 shadow border border-3 border-info">
+            <form [formGroup]="frutaForm" (ngSubmit)="enviar(); frutaForm.reset()">
+                <div class="form-group m-2">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" class="form-control" formControlName="nombre">
+
+                    <div *ngIf="!frutaForm.errors && (frutaForm.controls['nombre'].touched || frutaForm.controls['nombre'].dirty)">
+                        <div [hidden]="!frutaForm.controls['nombre'].hasError('required')" class="alert alert-danger">
+                            Por favor debe ingresar el nombre de la fruta
+                        </div>
+                        <div [hidden]="!frutaForm.controls['nombre'].hasError('minlength')" class="alert alert-danger">
+                            El nombre de la fruta debe tener al menos 3 caracteres
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-2">
+                    <label>Precio:</label>
+                    <input type="text" name="precio" class="form-control" formControlName="precio">
+
+                    <div *ngIf="!frutaForm.errors && (frutaForm.controls['precio'].touched || frutaForm.controls['precio'].dirty)">
+                        <div [hidden]="!frutaForm.controls['precio'].hasError('required')" class="alert alert-danger m-2">
+                            Por favor el precio es obligatorio
+                        </div>
+                        <div [hidden]="!frutaForm.controls['precio'].hasError('pattern')" class="alert alert-danger m-2">
+                            El precio debe ser numérico y maximo de 3 decimales
+                        </div>
+                    </div>
+                </div>
+                <div class="form-grop m-2">
+                    <button class="btn btn-dark" [disabled]="!frutaForm.valid">Enviar</button>
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>

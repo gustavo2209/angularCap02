@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BusquedaPlatosComponent } from './comp/busqueda-platos/busqueda-platos.component';
 import { DirectivaComponent } from './comp/directiva/directiva.component';
 import { EmpleadosComponent } from './comp/empleados/empleados.component';
+import { FormModelComponent } from './comp/form-model/form-model.component';
 import { FormTemplateComponent } from './comp/form-template/form-template.component';
 import { HomeComponent } from './comp/home/home.component';
 import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'empleados-directivaFor', component:EmpleadosComponent},
   {path:'busqueda-platos-restaurante', component:BusquedaPlatosComponent},
   {path:'form-template', component:FormTemplateComponent},
+  {path:'form-model', component:FormModelComponent},
   {path:'**', pathMatch:'full', component:PageNotFoundComponent}
 ];
 

@@ -15,9 +15,10 @@ import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.comp
 import { HomeComponent } from './comp/home/home.component';
 import { EmpleadosComponent } from './comp/empleados/empleados.component';
 import { BusquedaPlatosComponent } from './comp/busqueda-platos/busqueda-platos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConsultaPipe } from './pipes/consulta.pipe';
 import { FormTemplateComponent } from './comp/form-template/form-template.component';
+import { FormModelComponent } from './comp/form-model/form-model.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,14 @@ import { FormTemplateComponent } from './comp/form-template/form-template.compon
     EmpleadosComponent,
     BusquedaPlatosComponent,
     ConsultaPipe,
-    FormTemplateComponent
+    FormTemplateComponent,
+    FormModelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
