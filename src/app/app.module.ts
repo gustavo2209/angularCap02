@@ -14,6 +14,10 @@ import { NavegadorComponent } from './comp/navegador/navegador.component';
 import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.component';
 import { HomeComponent } from './comp/home/home.component';
 import { EmpleadosComponent } from './comp/empleados/empleados.component';
+import { BusquedaPlatosComponent } from './comp/busqueda-platos/busqueda-platos.component';
+import { FormsModule } from '@angular/forms';
+import { ConsultaPipe } from './pipes/consulta.pipe';
+import { FormTemplateComponent } from './comp/form-template/form-template.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +32,15 @@ import { EmpleadosComponent } from './comp/empleados/empleados.component';
     NavegadorComponent,
     PageNotFoundComponent,
     HomeComponent,
-    EmpleadosComponent
+    EmpleadosComponent,
+    BusquedaPlatosComponent,
+    ConsultaPipe,
+    FormTemplateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

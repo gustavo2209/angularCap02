@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <p class="lead fs-2 m-2 p-2 text-primary">Formulario de frutas con Template Driven</p>
+        <div class="col col-5 border border-2 border-primary shadow">
+            <form #frutaForm="ngForm" (ngSubmit)="onSubmit(frutaForm.value); frutaForm.reset()">
+                <div class="form-group m-2">
+                    <label>Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" minlength="3" maxlength="10" #nombreRef="ngModel" ngModel required/>
+
+                    <div *ngIf="nombreRef.errors && (nombreRef.dirty || nombreRef.touched)" class="alert alert-danger m-3">
+                        <div [hidden]="!nombreRef.errors?.['required']">
+                            El nombre de la fruta es obligatorio
+                        </div>
+                        <div [hidden]="!nombreRef.errors?.['minlength']">
+                            Por favor ingrese al menos tres caracteres...
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-2">
+                    <label>Precio:</label>
+                    <input type="text" class="form-control" name="precio" #precioRef="ngModel" ngModel required (keypress)="validaPrecio($event)"/>
+
+                    <div *ngIf="precioRef.errors && (precioRef.dirty || precioRef.touched)" class="alert alert-danger m-3">
+                        <div [hidden]="!precioRef.errors?.['required']">
+                            El precio es obligatorio y puede tener maximo 2 decimales
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-2">
+                    <button class="btn btn-dark" [disabled]="!frutaForm.form.valid">Enviar fruta</button>
+                </div>
+            </form>
+        </div>
+        <div class="col col-5 border border-3 border-info ms-3">
+            <pre>Registro:{{resultado | json}}</pre>
+            <pre>Lista: {{frutas | json}}</pre>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fruta of frutas">
+                        <td>{{fruta.nombre}}</td>
+                        <td>{{fruta.precio}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

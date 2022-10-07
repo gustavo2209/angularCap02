@@ -70,3 +70,21 @@ export const empleados:any[]=[
       calificacion:9
     }
   ]
+
+  export const platos:any[]=[
+    {
+      id:1, nombre:'Lomo Saltado', precio:23.43, descripcion:'A base de arroz, carne y tomate con cebolla'
+    },
+    {
+      id:2, nombre:'Pachamanca', precio:63.43, descripcion:'A base de todas las carnes'
+    },
+    {
+      id:3, nombre:'Carapulcra', precio:12.43, descripcion:'A base de arroz, con mani y papa cortada'
+    },
+    {
+      id:4, nombre:'Seco con frejoles', precio:12.23, descripcion:'A base de culantro y res con frejoles'
+    },
+    {
+      id:5, nombre:'Aji de gallina', precio:16.43, descripcion:'A base de aji amarillo con pollo deshilachado'
+    }
+  ]

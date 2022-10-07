@@ -1,0 +1,27 @@
+<div class="container">
+    <p>Búsqueda de platos en restaurante</p>
+
+    <div class="container">
+        <label>Busqueda por nombre</label>
+        <input type="text" [(ngModel)]="consulta" />
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plato of platos | consulta:consulta">
+                <td>{{plato.id}}</td>
+                <td>{{plato.nombre}}</td>
+                <td>{{plato.descripcion}}</td>
+                <td>{{plato.precio}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
