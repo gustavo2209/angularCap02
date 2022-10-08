@@ -10,6 +10,7 @@
                         <th>Apellidos</th>
                         <th>Edad</th>
                         <th>Cargo</th>
+                        <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -19,9 +20,11 @@
                         <td>{{empleado.apellidos}}</td>
                         <td>{{empleado.edad}}</td>
                         <td>{{empleado.cargo}}</td>
+                        <td>{{empleado.estado == 1?'Activo':'Inactivo'}}</td>
                         <td>
                             <button class="btn btn-sm btn-danger m-2" (click)="eliminar(empleado)">Eliminar</button>
                             <button class="btn btn-sm btn-primary" (click)="editar(empleado)">Editar</button>
+                            <button class="btn btn-sm btn-success m-2" (click)="eliminarLogica(empleado)">Elimina Logica</button>
                         </td>
                     </tr>
                 </tbody>
@@ -32,13 +35,49 @@
             <form [formGroup]="formValue">
                 <label>Nombre:</label>
                 <input type="text" formControlName="nombre" class="form-control"/>
+                <div *ngIf="!formValue.errors && (formValue.controls['nombre'].touched || formValue.controls['nombre'].dirty)">
+                    <div [hidden]="!formValue.controls['nombre'].hasError('required')" class="alert alert-danger">
+                        Por favor debe ingresar el nombre del empleado
+                    </div>
+                </div>
+                
                 <label>Apellidos:</label>
                 <input type="text" formControlName="apellidos" class="form-control"/>
+                <div *ngIf="!formValue.errors && (formValue.controls['apellidos'].touched || formValue.controls['apellidos'].dirty)">
+                    <div [hidden]="!formValue.controls['apellidos'].hasError('required')" class="alert alert-danger">
+                        Por favor debe ingresar el apellido del empleado
+                    </div>
+                </div>
+
                 <label>Edad:</label>
                 <input type="text" formControlName="edad" class="form-control"/>
+                <div *ngIf="!formValue.errors && (formValue.controls['edad'].touched || formValue.controls['edad'].dirty)">
+                    <div [hidden]="!formValue.controls['edad'].hasError('required')" class="alert alert-danger">
+                        Por favor debe ingresar la edad del empleado
+                    </div>
+                </div>
+                <div [hidden]="!formValue.controls['edad'].hasError('pattern')" class="alert alert-danger m-2">
+                    La edad debe ser numérica
+                </div>
+                <div [hidden]="!formValue.controls['edad'].hasError('maxlength')" class="alert alert-danger">
+                    La edad debe tener dos dígitos
+                </div>
+                <div [hidden]="!formValue.controls['edad'].hasError('min')" class="alert alert-danger">
+                    Debe ser mayor de edad
+                </div>
+                <div [hidden]="!formValue.controls['edad'].hasError('max')" class="alert alert-danger">
+                    La edad maxima permitida es hasta los 70 años
+                </div>
+
                 <label>Cargo:</label>
                 <input type="text" formControlName="cargo" class="form-control"/>
-                <button *ngIf="muestraBtnR" class="btn btn-primary btn-sm m-2 p-2" (click)="registrar()">Registrar</button>
+                <div *ngIf="!formValue.errors && (formValue.controls['cargo'].touched || formValue.controls['cargo'].dirty)">
+                    <div [hidden]="!formValue.controls['cargo'].hasError('required')" class="alert alert-danger">
+                        Por favor debe ingresar el cargo del empleado
+                    </div>
+                </div>
+
+                <button *ngIf="muestraBtnR" class="btn btn-primary btn-sm m-2 p-2" (click)="registrar()" [disabled]="!formValue.valid">Registrar</button>
                 <button *ngIf="muestraBtnA" class="btn btn-warning btn-sm m-2 p-2" (click)="actualizar()">Actualizar</button>
                 <button class="btn btn-info btn-sm m-2 p-2" (click)="cancelar()">Cancelar</button>
             </form>

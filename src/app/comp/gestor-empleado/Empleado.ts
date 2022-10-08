@@ -4,4 +4,5 @@ export class Empleado{
     apellidos:string='';
     edad:number=0;
     cargo:string='';
+    estado:number=0;
 }
