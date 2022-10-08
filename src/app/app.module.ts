@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConsultaPipe } from './pipes/consulta.pipe';
 import { FormTemplateComponent } from './comp/form-template/form-template.component';
 import { FormModelComponent } from './comp/form-model/form-model.component';
+import {HttpClientModule} from '@angular/common/http';
+import { GestorEmpleadoComponent } from './comp/gestor-empleado/gestor-empleado.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +39,15 @@ import { FormModelComponent } from './comp/form-model/form-model.component';
     BusquedaPlatosComponent,
     ConsultaPipe,
     FormTemplateComponent,
-    FormModelComponent
+    FormModelComponent,
+    GestorEmpleadoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

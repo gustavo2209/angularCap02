@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <p class="lead fs-2">Gestor de Empleados API {{empleados.length}}</p>
+        <div class="col-7 m-2 border border-2 border-primary shadow">
+            <p class="text-primary fs-4">Listado de Empleados</p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Edad</th>
+                        <th>Cargo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados">
+                        <td>{{empleado.nombre}}</td>
+                        <td>{{empleado.apellidos}}</td>
+                        <td>{{empleado.edad}}</td>
+                        <td>{{empleado.cargo}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger m-2" (click)="eliminar(empleado)">Eliminar</button>
+                            <button class="btn btn-sm btn-primary" (click)="editar(empleado)">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col col-4 m-2 border border-2 border-primary-shadow">
+            <p class="fs-4 lead text-primary fw-bolder">Formulario de Empleado</p>
+            <form [formGroup]="formValue">
+                <label>Nombre:</label>
+                <input type="text" formControlName="nombre" class="form-control"/>
+                <label>Apellidos:</label>
+                <input type="text" formControlName="apellidos" class="form-control"/>
+                <label>Edad:</label>
+                <input type="text" formControlName="edad" class="form-control"/>
+                <label>Cargo:</label>
+                <input type="text" formControlName="cargo" class="form-control"/>
+                <button *ngIf="muestraBtnR" class="btn btn-primary btn-sm m-2 p-2" (click)="registrar()">Registrar</button>
+                <button *ngIf="muestraBtnA" class="btn btn-warning btn-sm m-2 p-2" (click)="actualizar()">Actualizar</button>
+                <button class="btn btn-info btn-sm m-2 p-2" (click)="cancelar()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
