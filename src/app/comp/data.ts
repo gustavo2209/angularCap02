@@ -88,3 +88,70 @@ export const empleados:any[]=[
       id:5, nombre:'Aji de gallina', precio:16.43, descripcion:'A base de aji amarillo con pollo deshilachado'
     }
   ]
+
+  export const platosInternacionales:any[]=[
+    {
+      id: 1,
+      nombre: "Lasagna",
+      precio: 60.45,
+      descripcion: "Es un plato a base de pasta roja"
+    },
+    {
+      id: 2,
+      nombre: "Paella",
+      precio: 56.45,
+      descripcion: "Es un plato a base de arroz con todas las carnes"
+    },
+  ]
+
+  export const productos:any[]=[
+    {
+      id: 1,
+      nombre: "Arroz",
+      marca: "Costeño",
+      precio: 60.45
+      
+    },
+    {
+      id: 2,
+      nombre: "Aceite",
+      marca: "Primor",
+      precio: 12.00
+      
+    },
+    {
+      id: 3,
+      nombre: "Fideo",
+      marca: "Don Victorio",
+      precio: 5.40
+      
+    },
+    {
+      id: 4,
+      nombre: "SixPack galletas Soda Field",
+      marca: "San Jorge",
+      precio: 2.90
+      
+    },
+    {
+      id: 5,
+      nombre: "Trozos de Atun",
+      marca: "Primor",
+      precio: 5.99
+      
+    },
+    {
+      id: 6,
+      nombre: "Mayonesa",
+      marca: "Alacena",
+      precio: 15.00
+      
+    },
+    {
+      id: 7,
+      nombre: "Fideo",
+      marca: "Molitalia",
+      precio: 3.30
+      
+    }
+  ]

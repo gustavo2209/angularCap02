@@ -21,6 +21,9 @@ import { FormTemplateComponent } from './comp/form-template/form-template.compon
 import { FormModelComponent } from './comp/form-model/form-model.component';
 import {HttpClientModule} from '@angular/common/http';
 import { GestorEmpleadoComponent } from './comp/gestor-empleado/gestor-empleado.component';
+import { PlatosNIComponent } from './comp/platos-ni/platos-ni.component';
+import { ArregloProductosComponent } from './comp/arreglo-productos/arreglo-productos.component';
+import { ConsultaProductosPipe } from './pipes/consulta-productos.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { GestorEmpleadoComponent } from './comp/gestor-empleado/gestor-empleado.
     ConsultaPipe,
     FormTemplateComponent,
     FormModelComponent,
-    GestorEmpleadoComponent
+    GestorEmpleadoComponent,
+    PlatosNIComponent,
+    ArregloProductosComponent,
+    ConsultaProductosPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,45 @@
+<div class="container">
+    <p class="lead fs-2">Platos Nacionales</p>
+    <button (click)="mostrarPlatosN()" class="btn btn-info">Mostrar platos nacionales</button>
+</div>
+
+<div class="container mt-3">
+    <div *ngIf="muestraPlatosN">
+        <div class="row">
+            <div class="col col-2" *ngFor="let platoNacional of platosN">
+                <div class="card m-2">
+                    <div class="card-header bg-primary text-white">
+                        Nombre: {{ platoNacional.nombre }}
+                    </div>
+                    <div class="card-body">Precio: {{ platoNacional.precio }}</div>
+                    <div class="card-footer">
+                        <b>Descripción:</b> {{ platoNacional.descripcion }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <p class="lead fs-2">Platos Internacionales</p>
+    <button (click)="mostrarPlatosI()" class="btn btn-info">Mostrar platos internacionales</button>
+</div>
+
+<div class="container mt-3">
+    <div *ngIf="muestraPlatosI">
+        <div class="row">
+            <div class="col col-2" *ngFor="let platoInternacional of platosI">
+                <div class="card m-2">
+                    <div class="card-header bg-primary text-white">
+                        Nombre: {{ platoInternacional.nombre }}
+                    </div>
+                    <div class="card-body">Precio: {{ platoInternacional.precio }}</div>
+                    <div class="card-footer">
+                        <b>Descripción:</b> {{ platoInternacional.descripcion }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

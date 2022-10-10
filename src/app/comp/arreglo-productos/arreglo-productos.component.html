@@ -1,0 +1,24 @@
+<div class="container">
+    <p>Búsqueda de productos</p>
+
+    <div class="container">
+        <label>Busqueda por marca</label>
+        <input type="text" [(ngModel)]="consulta" />
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col col-2" *ngFor="let producto of productos | consultaProductos:consulta">
+                <div class="card m-2">
+                    <div class="card-header bg-primary text-white">
+                        Nombre: {{ producto.nombre }}
+                    </div>
+                    <div class="card-body">Precio: S/. {{ producto.precio }}</div>
+                    <div class="card-footer">
+                        <b>Marca:</b> {{ producto.marca }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
