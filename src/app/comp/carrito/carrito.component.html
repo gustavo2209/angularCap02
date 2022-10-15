@@ -1,0 +1,27 @@
+<div class="container">
+    <p class="lead fs-2 text-primary">Compras realizadas</p>
+    <div class="border border-2 border-info m-2">
+        <button class="btn btn-danger btn-sm m-2" (click)="limpiarCarrito()">Limpiar</button>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Monto S/.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of carrito">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.cantidad}}</td>
+                    <td>{{(item.precio * item.cantidad).toFixed(2)}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr/>
+
+        <p class="text-end lead fs-2 fs-primary">Total: {{getTotal().toFixed(2)}}</p>
+    </div>
+</div>

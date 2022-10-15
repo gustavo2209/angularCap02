@@ -24,6 +24,9 @@ import { GestorEmpleadoComponent } from './comp/gestor-empleado/gestor-empleado.
 import { PlatosNIComponent } from './comp/platos-ni/platos-ni.component';
 import { ArregloProductosComponent } from './comp/arreglo-productos/arreglo-productos.component';
 import { ConsultaProductosPipe } from './pipes/consulta-productos.pipe';
+import { GestorCarritoComponent } from './comp/gestor-carrito/gestor-carrito.component';
+import { ListaProdComponent } from './comp/lista-prod/lista-prod.component';
+import { CarritoComponent } from './comp/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { ConsultaProductosPipe } from './pipes/consulta-productos.pipe';
     GestorEmpleadoComponent,
     PlatosNIComponent,
     ArregloProductosComponent,
-    ConsultaProductosPipe
+    ConsultaProductosPipe,
+    GestorCarritoComponent,
+    ListaProdComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { DirectivaComponent } from './comp/directiva/directiva.component';
 import { EmpleadosComponent } from './comp/empleados/empleados.component';
 import { FormModelComponent } from './comp/form-model/form-model.component';
 import { FormTemplateComponent } from './comp/form-template/form-template.component';
+import { GestorCarritoComponent } from './comp/gestor-carrito/gestor-carrito.component';
 import { GestorEmpleadoComponent } from './comp/gestor-empleado/gestor-empleado.component';
 import { HomeComponent } from './comp/home/home.component';
 import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'gestor-empleado-api', component:GestorEmpleadoComponent},
   {path:'platos-nacionales-internacionales', component:PlatosNIComponent},
   {path:'arreglo-productos', component:ArregloProductosComponent},
+  {path:'gestor-carrito', component:GestorCarritoComponent},
   {path:'**', pathMatch:'full', component:PageNotFoundComponent}
 ];
 
